@@ -1,0 +1,133 @@
+{#
+This file is part of EC-CUBE
+
+Copyright(c) LOCKON CO.,LTD. All Rights Reserved.
+
+http://www.lockon.co.jp/
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+#}           
+            <div class="left-part col-md-4 col-lg-4 col-sm-12 col-xs-12" style="padding-right: 5px; padding-left: 5px;">
+                <div class="pic-and-gradient">
+                 <a href="{{ url('product_list') }}?category_id=1" target="_blank"> 
+                    <img src="{{ asset('assets/img/cp01.jpg') }}" style="width:100%;height:240px;">
+                      <p>
+                         Microsoft Office 2019
+                       </p>
+                    </a>
+                </div>
+                <ul class="ty-pic-txt">
+                   {% set cateGory1Products = repository('Eccube\\Entity\\Product').getProductsByGategorys([1]) %}
+                   {% for product in cateGory1Products %}
+                    <li style="margin-bottom:5px;" class="row">
+                      <a class="ty-pic-txt-p col-md-6 col-lg-6 col-sm-6 col-xs-6" href="{{ url('product_detail', {'id': product.id}) }}" target="_blank" style="padding-right: 5px; padding-left: 5px;">                         
+                        
+                        {% if product.ProductImage|length > 0 %}
+                          <div class="slide-item"><img src="{{ asset(product.ProductImage[0], 'save_image') }}"></div>
+                        {% else %}
+                       
+                         <div class="slide-item"><img src="{{ asset(''|no_image_product, 'save_image') }}"/></div>
+                        
+                         {% endif %}
+                        
+                       </a>
+                       <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6" style="padding-right: 5px; padding-left: 5px;">
+                       <p class="tt">
+                         <a href="{{ url('product_detail', {'id': product.id}) }}" target="_blank" title="">
+                         {{product.name}}                        
+                         </a>                       
+                       </p>
+                       <p>
+                         <em href="{{ url('product_detail', {'id': product.id}) }}" target="_blank" title="" >{{ product.getPrice02IncTaxMin|price }}</em>
+                        </p>
+                       <p><a href="{{ url('product_detail', {'id': product.id}) }}" target="_blank" title="">                                                                                    
+                           {{product.description}}                                                                                                                                    
+                          </a>
+                       </p>
+                       <div>
+                    </li>
+                    {% endfor %}                    
+                </ul>
+            </div>
+            <div class="left-part col-md-4 col-lg-4 col-sm-12 col-xs-12" style="padding-right: 5px; padding-left: 5px;">
+                <div class="pic-and-gradient">
+                <a href="{{ url('product_list') }}?category_id=2" target="_blank">
+                 <img src="{{ asset('assets/img/cp02.jpg') }}" style="width:100%;height:240px;">
+                        <p>
+                            Microsoft Office 365
+                        </p>
+                    </a>
+                </div>
+                <ul class="ty-pic-txt">
+                   {% set cateGory2Products = repository('Eccube\\Entity\\Product').getProductsByGategorys([2]) %}
+                   {% for product in cateGory2Products %}
+                    <li style="margin-bottom:5px;" class="row">
+                      <a class="ty-pic-txt-p col-md-6 col-lg-6 col-sm-6 col-xs-6" href="{{ url('product_detail', {'id': product.id}) }}" target="_blank" style="padding-right: 5px; padding-left: 5px;">                         
+                        {% if product.ProductImage|length > 0 %}
+                          <div class="slide-item"><img src="{{ asset(product.ProductImage[0], 'save_image') }}"></div>
+                        {% else %}                      
+                         <div class="slide-item"><img src="{{ asset(''|no_image_product, 'save_image') }}"/></div>                       
+                         {% endif %}                                           
+                       </a>
+                       <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6" style="padding-right: 5px; padding-left: 5px;">
+                       <p class="tt">
+                        <a href="{{ url('product_detail', {'id': product.id}) }}" target="_blank" title="">
+                         {{product.name}}                        
+                         </a>                       
+                       </p>
+                       <p>
+                        <em href="{{ url('product_detail', {'id': product.id}) }}" target="_blank" title="" >{{ product.getPrice02IncTaxMin|price }}</em>
+                       </p>
+                       <p>
+                        <a href="{{ url('product_detail', {'id': product.id}) }}" target="_blank" title=""> {{product.description}} 
+                        </a>
+                       </p>
+                       </div>
+                    </li>
+                    {% endfor %}     
+                                      
+                </ul>
+
+            </div>
+            <div class="mid-part col-md-4 col-lg-4 col-sm-12 col-xs-12" style="padding-right: 5px; padding-left: 5px;">
+                <div class="pic-and-gradient">
+                     <a href="{{ url('product_list') }}?category_id=5" target="_blank"> 
+                        <img src="{{ asset('assets/img/cp03.jpg') }}" style="width:100%;px;height:240px;">
+                        <p>Windows 10</p>
+                    </a>
+                </div>
+                <ul class="ty-pic-txt">
+                    
+                   {% set cateGory3Products = repository('Eccube\\Entity\\Product').getProductsByGategorys([5]) %}
+                   {% for product in cateGory3Products %}
+                    <li style="margin-bottom:5px;" class="row">
+                      <a class="ty-pic-txt-p col-md-6 col-lg-6 col-sm-6 col-xs-6" href="{{ url('product_detail', {'id': product.id}) }}" target="_blank" style="padding-right: 5px; padding-left: 5px;">                         
+                          
+                         {% if product.ProductImage|length > 0 %}
+                          <div class="slide-item"><img src="{{ asset(product.ProductImage[0], 'save_image') }}"></div>
+                        {% else %}
+                       
+                         <div class="slide-item"><img src="{{ asset(''|no_image_product, 'save_image') }}"/></div>
+                        
+                         {% endif %}
+                        
+                       </a>
+                       <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6" style="padding-right: 5px; padding-left: 5px;">
+                       <p class="tt"><a href="{{ url('product_detail', {'id': product.id}) }}" target="_blank" title="">
+                         {{product.name}}                        
+                         </a>
+                         
+                       </p>
+                       <p>
+                        <em href="{{ url('product_detail', {'id': product.id}) }}" target="_blank" title="" >{{ product.getPrice02IncTaxMin|price }}</em>
+                        </p>
+                       <p><a href="{{ url('product_detail', {'id': product.id}) }}" target="_blank" title="">{{product.description}}</a></p>
+                       </div>
+                    </li>
+                    {% endfor %}   
+                   
+                </ul>
+            </div>
+            
+      

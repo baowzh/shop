@@ -1,0 +1,53 @@
+{#
+This file is part of EC-CUBE
+
+Copyright(c) LOCKON CO.,LTD. All Rights Reserved.
+
+http://www.lockon.co.jp/
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+#}
+<div class="ec-headerNaviRole" style="background: rgb(33, 61, 124);height:80px;overflow: hidden;">
+    <div class="ec-headerNaviRole__left">
+       
+        <div class="ec-headerRole__navSP" style="float:left;">
+            {{ include('Block/nav_sp.twig') }}
+        </div>
+       
+           <div class="left logo" style="float:left;">
+           <a href="#"><img alt="软件logo" title="软件logo" src="{{ asset('assets/img/logo.png') }}">
+           </a>
+        
+        </div>
+    </div>
+    <div class="ec-headerNaviRole__right hide_menu" style="background: rgb(33, 61, 124);">
+       <ul class="clearfix right navList" style="height:80px;">
+                <li ><a href="{{ url('homepage') }}">Home</a></li>                            
+                <li >
+                  <a href="{{ url('help_about') }}">
+                                                  会社概要
+                 </a>
+
+                </li>
+                 <li >
+                    <a href="{{ url('contact') }}">
+                                                    お問い合わせ
+                    </a>
+
+                 </li>
+                 <li ">
+                   <a href=" {{ url('mypage_login') }} ">
+                                                 ログイン
+                   </a>
+                </li>
+                <li >
+                  <a href="{{ url('help_guide') }}">ご利用ガイド</a></li>
+                <li >
+                <div class="gwcinp">                
+                {{ totalPrice|price }} <span><a href="{{ url('cart') }}">{{ totalQuantity|number_format }}</a></span>                               
+                 </div>                          
+                </li>
+            </ul>
+    </div>
+</div>

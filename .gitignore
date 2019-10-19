@@ -1,0 +1,5 @@
+var/
+logs/
+.env
+wordpress/
+vendor/

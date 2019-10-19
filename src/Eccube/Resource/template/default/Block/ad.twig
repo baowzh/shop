@@ -1,0 +1,58 @@
+{#
+This file is part of EC-CUBE
+
+Copyright(c) LOCKON CO.,LTD. All Rights Reserved.
+
+http://www.lockon.co.jp/
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+#}
+ <div class="swiper-ty col-md-8 col-lg-8 col-sm-6 col-xs-12">
+     <ul class="slider">
+         <li class="row">
+            <a href="http://www.office-soft.jp/products/detail/3" target="_blank" title="">
+              <img src="{{ asset('assets/img/1J4335U4_lit.jpg') }}" alt="">
+                   <p class="col-md-12 col-lg-12 col-sm-12 col-xs-12"></p>
+                    <span>Microsoft Office 2019</span>
+             </a> 
+             </li>
+          <li  class="row">
+            <a href="http://www.office-soft.jp/products/detail/5" target="_blank" title="">
+             <img src=" {{ asset('assets/img/1J4335U4_lit.jpg') }}" alt="">
+                <p class="col-md-12 col-lg-12 col-sm-12 col-xs-12"></p>
+                <span>Microsoft Office 365</span>
+            </a> 
+           </li>
+       </ul>
+       <ul class="navdot">
+           <li class="active"></li>
+            <li class=""></li>
+        </ul>
+   </div>
+            
+            
+            <script type="text/javascript">
+            ycSlider({
+                wrap: '.swiper-gdbb',
+                dir: 'left',
+                autoplay: 3500,
+                speed: 400,
+                navFn: function (index) {
+                    var gdbbContentLi = $('#gdbbContent li');
+                    gdbbContentLi.eq(index).fadeIn().siblings().hide();
+                }
+            });
+            ycSlider({
+                wrap: '.swiper-yl',
+                dir: 'left',
+                autoplay: 3500,
+                speed: 400
+            });
+            ycSlider({
+                wrap: '.swiper-ty',
+                dir: 'left',
+                autoplay: 3500,
+                speed: 400
+            });
+        </script>

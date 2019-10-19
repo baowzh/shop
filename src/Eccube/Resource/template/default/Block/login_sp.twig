@@ -1,0 +1,44 @@
+{#
+This file is part of EC-CUBE
+
+Copyright(c) LOCKON CO.,LTD. All Rights Reserved.
+
+http://www.lockon.co.jp/
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+#}
+
+<div class="ec-headerLinkArea" style="background: rgb(33, 61, 124);">
+    <div class="ec-headerLink__list">
+        <a class="ec-headerLink__item" href="{{ url('homepage') }}">
+            <div class="ec-headerLink__icon">
+                <i class="fas fa-home fa-fw"></i>
+            </div>
+            <span>{{ 'ホームに戻る'|trans }}</span>
+        </a>
+        <a class="ec-headerLink__item" href="{{ url('cart') }}">
+            <div class="ec-headerLink__icon">
+                <i class="fas fa-shopping-cart fa-fw"></i>
+            </div>
+            <span>{{ 'カートを見る'|trans }}</span>
+        </a>
+        <a class="ec-headerLink__item" href="{{ url('help_about') }}">           
+            <span>{{ '会社概要'|trans }}</span>
+        </a>
+        
+        <a class="ec-headerLink__item" href="{{ url('contact') }}">
+            
+            <span>{{ 'お問い合わせ'|trans }}</span>
+        </a>
+        <a class="ec-headerLink__item" href="{{ url('mypage_login') }}">
+            
+            <span>{{ 'ログイン'|trans }}</span>
+        </a>
+         <a class="ec-headerLink__item" href="{{ url('help_guide') }}">
+            
+            <span>{{ 'ご利用ガイド'|trans }}</span>
+        </a>
+          
+    </div>
+</div>

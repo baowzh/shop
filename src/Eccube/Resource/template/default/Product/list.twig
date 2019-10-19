@@ -1,0 +1,88 @@
+{#
+This file is part of EC-CUBE
+
+Copyright(c) LOCKON CO.,LTD. All Rights Reserved.
+
+http://www.lockon.co.jp/
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+#}
+{% extends 'default_frame.twig' %}
+{% set body_class = 'product_page' %}
+{% block main %}
+  
+  <div class="container row padT">
+  
+        <div class="left mainBody col-md-8 col-lg-8 col-sm-8 col-xs-8">
+            <!--start -->
+            <div class="left1 mulu_bg">
+            {% if pagination.totalItemCount > 0 %}
+                <ul style="display: block;" id="Loading">
+
+              {% for Product in pagination %}
+                    <li class="odd row">
+                    <a href="{{ url('product_detail', {'id': Product.id}) }}" target="_blank" class="col-md-4 col-lg-4 col-sm-4 col-xs-4">
+                      <img  style="width:100%;height:132px;"  src="{{ asset(Product.main_list_image|no_image_product, 'save_image') }}" alt="" title=" ">
+                    </a> 
+                    <b class="col-md-6 col-lg-6 col-sm-6 col-xs-6">
+                        <a href="{{ url('product_detail', {'id': Product.id}) }}" target="_blank" title="#">{{ Product.name }}</a>
+                        </b>
+                       
+                        {% if Product.description_list %}
+                                    <p>{{ Product.description_list|raw|nl2br }}</p>
+                                {% endif %}
+                        
+                        <i>06-21</i>
+                    </li>
+                  {% endfor %} 
+
+
+                </ul>
+                {% endif %}
+                <div class="ad1"> </div>
+            </div>
+        
+            <!--end -->
+        </div>
+        <!-- -->
+        <div class="right sideBar col-md-4 col-lg-4 col-sm-4 col-xs-4">
+            <div class="adBox marB" >
+                <h1 class="redbg">Blog</h1>
+                {% set posts = getPosts() %}
+                <ul class="rankList"  style="min-height:320px;">
+                     {% for post in posts %}  
+                       <li class="odd">
+                        <p><a href="{{ url('post_detail', {'id': post.ID}) }}" title=" " target="_blank">{{post.post_title}}</a></p>
+                        <span>{{post.post_date}}</span>
+                    </li>
+                      {% endfor %}
+
+                    
+                     <!--
+                    <li class="odd">
+                        <p><a href="#" title=" " target="_blank">必見！Microsoft Office 2019のダウンロード方法を紹介する</a></p>
+                        <span>2018-06-21</span>
+                    </li>
+                     <li class="odd">
+                        <p><a href="#" title=" " target="_blank">Office 2019の価格比較！Word・Excelを安く購入する方法！</a></p>
+                        <span>2018-06-21</span>
+                    </li>
+                     <li class="odd">
+                        <p><a href="#" title=" " target="_blank">Microsoft Office 2019 の家庭版は1月22日からリリースへ</a></p>
+                        <span>2018-06-21</span>
+                    </li>
+                    <li class="odd">
+                        <p><a href="#" title=" " target="_blank">マイクロソフトOffice 2019を２台目のPCにインストールする方法</a></p>
+                        <span>2018-06-21</span>
+                    </li>
+                    -->
+
+                </ul>
+            </div>
+        </div>
+       
+    </div>  
+   
+    
+{% endblock %}

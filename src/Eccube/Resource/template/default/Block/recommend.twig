@@ -1,0 +1,25 @@
+{#
+This file is part of EC-CUBE
+
+Copyright(c) LOCKON CO.,LTD. All Rights Reserved.
+
+http://www.lockon.co.jp/
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+#}
+
+{% set posts = getPosts() %}
+<div class="ty-news col-md-4 col-lg-4 col-sm-6 col-xs-12">
+                <div class="ty-news-head"> <span>blog</span> </div>
+                <ul class="ty-news-list">
+                 {% for post in posts %}  
+                  <li><em>{{loop.index}}</em> <a href="{{ url('post_detail', {'id': post.ID}) }}" title="{{post.post_title}}">{{post.post_title}}</a> </li>                                                  
+                 {% endfor %}
+                </ul>
+      </div>
+
+
+
+
+

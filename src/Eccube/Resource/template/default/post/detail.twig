@@ -1,0 +1,98 @@
+{#
+This file is part of EC-CUBE
+
+Copyright(c) LOCKON CO.,LTD. All Rights Reserved.
+
+http://www.lockon.co.jp/
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
+#}
+{% extends 'post_frame.twig' %}
+
+{% block main %}
+    <div class="ec-role">
+        <div class="ec-pageHeader">
+           <h1 class="heading heading-primary">{{ post.post_title }}</h1>
+        </div>
+    </div>
+    <ul class="dateList dateList-single">
+        <li class="dateList__item icon-calendar">{{ post.post_date }}</li> 
+     </ul>
+     <ul class="socialList">
+  <li class="socialList__item"><a class="socialList__link icon-facebook" href="http://www.facebook.com/sharer.php?u={{url}}&t={{title}}" target="_blank" title="Facebookで共有"></a></li>
+  <li class="socialList__item"><a class="socialList__link icon-twitter" href="http://twitter.com/intent/tweet?text={{titleAndURL}}&url={{url}}" target="_blank" title="Twitterで共有"></a></li>
+  <li class="socialList__item"><a class="socialList__link icon-google" href="https://plus.google.com/share?url={{url}}" target="_blank" title="Google+で共有"></a></li>
+  <li class="socialList__item"><a class="socialList__link icon-hatebu" href="http://b.hatena.ne.jp/add?mode=confirm&url={{url}}&title={{title}}" target="_blank" data-hatena-bookmark-title="{{title}}" title="このエントリーをはてなブックマークに追加"></a></li>
+  <li class="socialList__item"><a class="socialList__link icon-pocket" href="http://getpocket.com/edit?url={{url}}" target="_blank" title="pocketで共有"></a></li><li class="socialList__item"><a class="socialList__link icon-line" href="http://line.naver.jp/R/msg/text/?{{titleAndURL}}" target="_blank" title="LINEで送る"></a></li>
+ </ul>
+  <div class="container">
+    <row>
+    <div class="col-md-10 col-lg-10 col-sm-12 col-xs-12">
+    <section class="content">
+    {{ outLine|raw }}
+    </section>
+    </div>
+    <div class="col-md-2 col-lg-2 col-sm-12 col-xs-12">
+         <ul class="ty-pic-txt">
+            <li style="margin-bottom:5px;height:230px;" >
+              <a class="ty-pic-txt-p " href="{{ url('product_detail', {'id': 3}) }}" target="_blank" style="padding-right: 5px; padding-left: 5px;">                                                                
+                  <div class="slide-item">
+                   <img src="http://www.office-soft.jp/html/upload/save_image/0723221635_5d3708b395826.jpg">
+                  </div>                       
+               </a>
+               <div  style="padding-right: 5px; padding-left: 5px;">
+                 <p class="tt">
+                     <a href="{{ url('product_detail', {'id': 3}) }}" target="_blank" title="">                       
+                         Microsoft Office 2019 Pro plus ダウンロード版|Windows PC2台用|                                                                        
+                      </a>                       
+                  </p>
+                  <p>
+                   <em href="{{ url('product_detail', {'id': 3}) }}" target="_blank" title="" >￥10,800</em>
+                  </p>
+               
+               <div>
+            </li>
+            <li style="margin-bottom:5px;height:230px;" >
+              <a class="ty-pic-txt-p " href="{{ url('product_detail', {'id': 6}) }}" target="_blank" style="padding-right: 5px; padding-left: 5px;">                                                                
+                  <div class="slide-item">
+                   <img src="http://www.office-soft.jp/html/upload/save_image/0813185044_5d5287f447282.png">
+                  </div>                       
+               </a>
+               <div  style="padding-right: 5px; padding-left: 5px;">
+                 <p class="tt">
+                     <a href="{{ url('product_detail', {'id': 6}) }}" target="_blank" title="">                                
+                         Microsoft Office 365 Home                                                                                                                       
+                      </a>                       
+                  </p>
+                  <p>
+                   <em href="{{ url('product_detail', {'id': 6}) }}" target="_blank" title="" >￥9,900</em>
+                  </p>
+               
+               <div>
+            </li>
+            <li style="margin-bottom:5px;height:230px;" >
+              <a class="ty-pic-txt-p " href="{{ url('product_detail', {'id': 5}) }}" target="_blank" style="padding-right: 5px; padding-left: 5px;">                                                                
+                  <div class="slide-item">
+                   <img src="http://www.office-soft.jp/html/upload/save_image/0813175849_5d527bc93f32c.png">
+                  </div>                       
+               </a>
+               <div  style="padding-right: 5px; padding-left: 5px;">
+                 <p class="tt">
+                     <a href="{{ url('product_detail', {'id': 5}) }}" target="_blank" title="">                                
+                         
+                         Microsoft Windows 10 Pro ダウンロード版(32 bit/64 bit 日本語版）                        
+                                                                                                                                               
+                      </a>                       
+                  </p>
+                  <p>
+                   <em href="{{ url('product_detail', {'id': 5}) }}" target="_blank" title="" >￥8,600</em>
+                  </p>
+               
+               <div>
+            </li>
+        </ul>
+    </div>
+    <row>
+  </div>
+{% endblock %}
