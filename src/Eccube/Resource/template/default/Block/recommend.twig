@@ -17,6 +17,7 @@ file that was distributed with this source code.
                   <li><em>{{loop.index}}</em> <a href="{{ url('post_detail', {'id': post.ID}) }}" title="{{post.post_title}}">{{post.post_title}}</a> </li>                                                  
                  {% endfor %}
                 </ul>
+                <a style="right:10px;bottom:-30px;position: absolute;" href="{{ url('post_lists', {'size': 10,'index':1}) }}">一覧へ<a>
       </div>
 
 

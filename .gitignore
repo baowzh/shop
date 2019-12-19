@@ -3,3 +3,7 @@ logs/
 .env
 wordpress/
 vendor/
+app/
+bin/
+var/
+
